@@ -1,6 +1,8 @@
 import { TabletMockup } from "./TabletMockup";
 
-const PILOT_LINK = "https://t.me/alexmarlo";
+type FlexPilotSectionProps = {
+    onOpenContactForm: () => void;
+};
 
 const flexCards = [
     {
@@ -44,7 +46,7 @@ const steps = [
     },
 ];
 
-export function FlexPilotSection() {
+export function FlexPilotSection({ onOpenContactForm }: FlexPilotSectionProps) {
     return (
         <section className="section flexSection" id="flex">
             <div className="sectionText">
@@ -103,19 +105,11 @@ export function FlexPilotSection() {
                     <div className="contactLinks">
                         <span>Контакты:</span>
 
-                        <a
-                            href="https://t.me/alexmarlo"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
+                        <a href="https://t.me/alexmarlo" target="_blank" rel="noreferrer">
                             @alexmarlo
                         </a>
 
-                        <a
-                            href="https://t.me/znbiz"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
+                        <a href="https://t.me/znbiz" target="_blank" rel="noreferrer">
                             @znbiz
                         </a>
 
@@ -130,23 +124,13 @@ export function FlexPilotSection() {
                 </div>
 
                 <div className="ctaButtons">
-                    <a
-                        className="primaryButton"
-                        href={PILOT_LINK}
-                        target="_blank"
-                        rel="noreferrer"
-                    >
+                    <button className="primaryButton" type="button" onClick={onOpenContactForm}>
                         Обсудить пилот <span>→</span>
-                    </a>
+                    </button>
 
-                    <a
-                        className="secondaryButton"
-                        href="https://t.me/alexmarlo"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
+                    <button className="secondaryButton" type="button" onClick={onOpenContactForm}>
                         Получить презентацию
-                    </a>
+                    </button>
                 </div>
             </div>
         </section>

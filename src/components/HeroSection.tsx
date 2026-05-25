@@ -1,8 +1,10 @@
 import { TabletMockup } from "./TabletMockup";
 
-const PILOT_LINK = "https://t.me/alexmarlo";
+type HeroSectionProps = {
+    onOpenContactForm: () => void;
+};
 
-export function HeroSection() {
+export function HeroSection({ onOpenContactForm }: HeroSectionProps) {
     return (
         <section className="section heroSection" id="features">
             <div className="sectionText heroText">
@@ -21,14 +23,9 @@ export function HeroSection() {
                 </p>
 
                 <div className="actions">
-                    <a
-                        className="primaryButton"
-                        href={PILOT_LINK}
-                        target="_blank"
-                        rel="noreferrer"
-                    >
+                    <button className="primaryButton" type="button" onClick={onOpenContactForm}>
                         Запросить демо <span>→</span>
-                    </a>
+                    </button>
 
                     <a className="secondaryButton" href="#how">
                         <span className="playIcon">▶</span> Посмотреть сценарий
